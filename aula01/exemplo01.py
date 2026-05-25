@@ -43,3 +43,6 @@ print(precos)
 
 print('\nValor total do estoque por produto:')
 print(precos * estoque)
+
+print('\nMostrando valores acima de 20:')
+print(estoque[estoque > 20])
