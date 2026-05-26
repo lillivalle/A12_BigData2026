@@ -7,9 +7,18 @@ print(df_vendas.head()) # .head() visualizar as 5 primeiras linhas de uma tabela
 
 print(f'\nFaturamento total: {df_vendas['Faturamento Total (R$)'].sum()}') # .sum() calcula o somatório de tudo
 
-print(f'\nMaior valor de Faturamento: {df_vendas['Faturamento Total (R$)'].max()}') # .max() maior faturamento
+#print(f'\nMaior valor de Faturamento: {df_vendas['Faturamento Total (R$)'].max()}') # .max() maior faturamento
+print(f'\nFaturamento Total (R$): ')
+valor = df_vendas['Faturamento Total (R$)'].max()
+print(df_vendas[df_vendas['Faturamento Total (R$)'] == valor][['Produto', 'Faturamento Total (R$)']]) #Sempre um dataframe)
 
 print(f'\nMenor valor de Faturamento: {df_vendas['Faturamento Total (R$)'].min()}') # .max() maior faturamento
 
 print(f'\nMédia dos Preços Praticados: {df_vendas['Preço por Unidade (R$)'].mean()}') # .mean() média dos preços
+
+media_vendidos = df_vendas['Unidades Vendidas'].mean()
+print(f'\nMédia Vendidos: {media_vendidos:.2f}')
+
+print(f'\nProdutos com vendas abaixo da média: ')
+print(df_vendas['Unidades Vendidas'] < media_vendidos)
 
